@@ -1,4 +1,5 @@
 $color: #ffffff;
+
 body {
     background-color: $color;
     // 禁用文字选中
@@ -8,4 +9,16 @@ body {
 img {
     // 禁用拖动图片
     -webkit-user-drag: none;
+}
+
+
+// home组件样式
+.logo {
+    height: 32px;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.site-layout .site-layout-background {
+    background: #fff;
 }

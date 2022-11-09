@@ -6,14 +6,12 @@ import routes from './router';
 
 
 
+
 function App() {
-  const [count, setCount] = useState(0)
-  const outlet = useRoutes(routes)
+  const [count, setCount] = useState(0);
+  const outlet = useRoutes(routes);
   return (
     <div className="App">
-      <Link to="/home" >home</Link>
-      <br />
-      <Link to="/about" >about</Link>
       {outlet}
     </div>
   )
