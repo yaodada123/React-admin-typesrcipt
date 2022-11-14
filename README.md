@@ -1,2 +1,2 @@
 # React-admin-typesrcipt
-一个建议的后台框架
+一个简易的后台框架
