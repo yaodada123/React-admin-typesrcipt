@@ -5,6 +5,8 @@ import React from "react";
 const About = lazy(() => import("../views/About/About"));
 const Page1 = lazy(() => import("../views/Page1"));
 const Page2 = lazy(() => import("../views/page2"));
+const Page301 = lazy(() => import("../views/page301"));
+import Login from "src/views/Login/index"
 
 const withLoadingComponent = (comp: JSX.Element) => {
     return (
@@ -29,6 +31,10 @@ const routes = [
                 path: '/page2',
                 element: withLoadingComponent( <Page2 /> )
             },
+            {
+                path: '/page301',
+                element: withLoadingComponent( <Page301 />)
+            }
         ]
     },
     {
@@ -39,6 +45,14 @@ const routes = [
         path: '/about',
         element: withLoadingComponent( <About /> )
     },
+    {
+        path: "/login",
+        element: <Login />
+    }
+    // {
+    //     path: "*",
+    //     element: <Navigate to='/page1' />
+    // }
 ]
 
 
