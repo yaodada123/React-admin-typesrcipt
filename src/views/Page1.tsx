@@ -4,20 +4,29 @@ import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
 
 const view = () => {
     // 获取仓库数据
-    let { count, arr } = useSelector((state:RootStateOrAny) => (
+    let { count, arr } = useSelector((state: RootStateOrAny) => (
         {
             count: state.numberStatusReducer.num,
             arr: state.arrStatusReducer.arr
         }
     ))
 
-    // 修改仓库数据
-    let dispatch =  useDispatch();
+    // 同步修改仓库数据
+    let dispatch = useDispatch();
     const btnClick = () => {
-        dispatch({type: "add1"})
+        dispatch({ type: "add1" })
     }
     const changeArrClick = () => {
-        dispatch({type: "arrPush", val: 22})
+        dispatch({ type: "arrPush", val: 22 })
+    }
+
+    // 异步修改仓库数据   异步操作
+    const changeNum = () => {
+        dispatch((dis: Function) => {
+            setTimeout(() => {
+                dis({type: "add1"})
+            }, 2000)
+        })
     }
     return (
         <div>
@@ -25,7 +34,7 @@ const view = () => {
             <br />
             {count}
             <br />
-            <button onClick={btnClick}>点击</button>
+            <button onClick={btnClick}>同步点击</button> <button onClick={changeNum}>异步点击</button>
             <br />
             {arr}
             <br />
