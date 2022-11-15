@@ -1,4 +1,4 @@
-export default {
+ const store = {
     state: {
         num: 10,
     },
@@ -8,5 +8,11 @@ export default {
         },
     },
     // 方法名统一管理
-    add1: "add1"
+    actionsNames: {},
 }
+let actionsNames = {};
+for(let key in store.actions) {
+    actionsNames[key] = key;
+}
+store.actionsNames = actionsNames;
+export default store;
