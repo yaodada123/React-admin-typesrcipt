@@ -1,13 +1,13 @@
-import { useDispatch, useSelector } from "react-redux";
+import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
 
 
 
 const view = () => {
     // 获取仓库数据
-    let { count, arr } = useSelector((state:{num: number, arr: number[]}) => (
+    let { count, arr } = useSelector((state:RootStateOrAny) => (
         {
-            count: state.num,
-            arr: state.arr
+            count: state.numberStatusReducer.num,
+            arr: state.arrStatusReducer.arr
         }
     ))
 
