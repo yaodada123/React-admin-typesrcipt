@@ -7,6 +7,13 @@
             newState.num++;
         },
     },
+    asyncActions: { // 这是异步方法
+        asyncAdd(dispatch: Function) {
+            setTimeout(() => {
+                dispatch({type: "add1"})
+            }, 2000)
+        }
+    },
     // 方法名统一管理
     actionsNames: {},
 }

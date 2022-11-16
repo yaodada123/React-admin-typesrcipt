@@ -16,7 +16,7 @@ const Login: React.FC = () => {
     message.success(axiosMessage);
     if (status) {
       localStorage.setItem("token", token);
-      navigate("/home/users");
+      navigate("/home");
     }
   };
 

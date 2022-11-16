@@ -1,5 +1,5 @@
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
-
+import numStatus from "src/store/numberStatus/index"
 
 
 const view = () => {
@@ -22,11 +22,7 @@ const view = () => {
 
     // 异步修改仓库数据   异步操作
     const changeNum = () => {
-        dispatch((dis: Function) => {
-            setTimeout(() => {
-                dis({type: "add1"})
-            }, 2000)
-        })
+        dispatch(numStatus.asyncActions.asyncAdd)
     }
     return (
         <div>

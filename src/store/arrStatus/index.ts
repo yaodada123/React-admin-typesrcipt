@@ -9,6 +9,13 @@ const store = {
         },
 
     },
+    asyncActions: {
+        asyncAdd(dispatch:Function) {
+            setTimeout(()=> {
+                dispatch({type: "arrPush"})
+            }, 2000)
+        }
+    },
     // 方法名统一管理
     actionName: {
     }

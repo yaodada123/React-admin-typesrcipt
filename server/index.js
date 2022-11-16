@@ -1,9 +1,14 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import { createRequire } from 'module'; // 解决commonjs引入问题
+const require = createRequire(import.meta.url);
+const cors = require("cors");
+
 const app = express();
 const port = 3000;
-app.use(bodyParser());
 
+app.use(cors());
+app.use(bodyParser());
 app.post('/login', (req, res) => {
     const { username, password } = req.body
     if (username === "admin" && password === "123456") {
@@ -14,5 +19,5 @@ app.post('/login', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`开启http:127.0.0.1:${port}`)
+    console.log(`开启http://127.0.0.1:${port}`)
 })
